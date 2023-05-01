@@ -1,0 +1,27 @@
+/* section1 css part start */
+
+.section1{
+     background: url(../../../public/images/background.jpg) no-repeat top center;
+     background-size: cover;
+     height: 100vh;
+     width: 100%;
+ }
+ @media (min-width: 1024px){
+     .section1{
+         background-attachment: fixed;
+     }
+ }
+ 
+ 
+ @media (max-width: 720px){
+     .section1{
+         background: url(../../../public/images/background.jpg) no-repeat top center;
+         background-size: cover;
+         height: 80vh;
+         width: 100%;
+         background-attachment: fixed;
+     }
+ }
+
+
+/* section1 css part ends */
