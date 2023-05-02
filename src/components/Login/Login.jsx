@@ -59,6 +59,7 @@ const Login = () => {
           .then((result) => {
                const user = result.user;
                setUser(user)
+               navigate('/')
              }).catch((error) => {
                const errorMessage = error.message;
                setError(errorMessage)
@@ -72,6 +73,7 @@ const Login = () => {
           .then((result) => {
                const user = result.user;
                setUser(user)
+               navigate('/')
              }).catch((error) => {
                const errorMessage = error.message;
                setError(errorMessage)

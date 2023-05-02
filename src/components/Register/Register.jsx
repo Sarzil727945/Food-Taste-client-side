@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import './Register.css';
 import { Button, Form } from 'react-bootstrap';
 import { AiFillEyeInvisible } from 'react-icons/ai'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 
@@ -15,6 +15,7 @@ const Register = () => {
      const [emailError, setEmailError] = useState('')
 
      const { createUser } = useContext(AuthContext)
+     const navigation = useNavigate();
 
      // passwordShown function start 
      const [conformPasswordShown, setConformPasswordShown] = useState(false);
@@ -52,6 +53,7 @@ const Register = () => {
                     const currentUser = userCredential.user;
                     setSuccess('Create user account successFull')
                     form.reset()
+                    navigation('/')
                     setEmail('')
                     upDataUser(currentUser, name, photoUrl)
                })
