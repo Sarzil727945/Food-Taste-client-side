@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 const Cart = ({ data }) => {
      const { picture, name, Experiences, likes, btn, recipesNumber } = data;
-     console.log(data);
      return (
           <div className='col-lg-6 mb-3'>
                <div>

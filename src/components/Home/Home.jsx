@@ -18,7 +18,7 @@ const Home = () => {
                {/* section1  part starts  */}
                <section className="container-fluid section1 pt-5">
                     <Marquee>
-                         <h1 className=' text-info'>This is Home Page</h1>
+                         <h1 className=' text-info'>Welcome to this Website Home Page</h1>
                     </Marquee>
                     <div className='mt-lg-5 pt-lg-5'>
                          <p className=' fs-1 text-muted text-center mt-lg-5'>Lemon & Limes - Personal Food Blog WordPress Theme</p>
