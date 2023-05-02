@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { AiFillLike } from 'react-icons/ai';
 import './Cart.css'
 import { Link } from 'react-router-dom';
 
@@ -14,13 +15,10 @@ const Cart = ({ data }) => {
                               <h3 className='mt-4'>Name: {name}</h3>
                               <h4>Numbers of recipes: {recipesNumber}</h4>
                               <Card.Title >Experience: {Experiences}</Card.Title>
-                              <Card.Subtitle className=" text-muted mb-2">
-
-                              </Card.Subtitle>
 
                               <Card.Subtitle className=" text-muted my-3">
 
-                                   <span> Likes: {likes} </span>
+                                   <span> <span className=' fs-4'><AiFillLike/></span> Likes: {likes} </span>
                               </Card.Subtitle>
                               <div className=' text-center'>
                                    <Button variant="info">

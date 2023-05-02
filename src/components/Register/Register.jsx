@@ -33,6 +33,7 @@ const Register = () => {
           setSuccess('')
           const form = event.target;
           const name = form.name.value;
+          const photoUrl = form.photoUrl.value;
           const email = form.email.value;
           const password = form.password.value;
           const conformPassword = form.conformPassword.value;
@@ -49,11 +50,10 @@ const Register = () => {
           createUser(email, password)
                .then((userCredential) => {
                     const currentUser = userCredential.user;
-                    console.log(currentUser);
                     setSuccess('Create user account successFull')
                     form.reset()
                     setEmail('')
-                    upDataUser(currentUser, name)
+                    upDataUser(currentUser, name, photoUrl)
                })
                .catch((error) => {
                     const errorMessage = error.message;
@@ -78,9 +78,10 @@ const Register = () => {
      }
      // valid email function end
 
-     const upDataUser = (user, name) => {
+     const upDataUser = (user, name, photoUrl) => {
           updateProfile(user, {
-               displayName: name
+               displayName: name,
+               photoURL: photoUrl
           })
                .then(() => {
                     // Profile updated!
@@ -97,9 +98,15 @@ const Register = () => {
                <div className=' col-lg-4 mx-auto '>
                     <Form onSubmit={handelRegister}>
                          <div className='border rounded px-5 py-4'>
+
                               <Form.Group className="mb-3" controlId="formBasicEmail">
                                    <Form.Label>Name</Form.Label>
                                    <Form.Control type="text" name='name' placeholder="Name" required />
+                              </Form.Group>
+
+                              <Form.Group className="mb-3" controlId="formBasicEmail">
+                                   <Form.Label>Photo URL</Form.Label>
+                                   <Form.Control type="text" name='photoUrl' placeholder="Photo URL" />
                               </Form.Group>
 
                               <Form.Group className="mb-3" controlId="formBasicEmail">

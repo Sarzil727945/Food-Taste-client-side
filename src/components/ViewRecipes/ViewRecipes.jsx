@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import SubViewRecipes from '../SubViewRecipes/SubViewRecipes';
 
 const ViewRecipes = () => {
      const { id } = useParams();
@@ -20,12 +21,15 @@ const ViewRecipes = () => {
           cartData()
      }, [])
 
-    console.log(jsonData);
      
      
      return (
-          <div className='mt-5 pt-5'>
-               <h1>view recipes</h1>
+          <div className='my-3 pt-5'>
+               {
+                    <SubViewRecipes
+                    data = {jsonData}
+                    ></SubViewRecipes>
+               }
           </div>
      );
 };

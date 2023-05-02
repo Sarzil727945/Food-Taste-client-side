@@ -12,7 +12,6 @@ import { Button } from 'react-bootstrap';
 const Header = () => {
      const { user, logOut } = useContext(AuthContext)
 
-     console.log(user);
      // logOut part start
      const handelLogOut = () => {
           logOut()
@@ -27,7 +26,7 @@ const Header = () => {
 
      return (
           <div className='fixed-top '>
-               <Navbar bg="dark" expand="lg" className=' mb-2'>
+               <Navbar bg="light" expand="lg" className=' mb-2'>
                     <Container fluid className='container'>
                          <Navbar.Brand href="#" className='fs-4'>
                               <img className='logoStyle me-5' src="https://recipepress.inspirythemes.com/fourth/wp-content/uploads/sites/5/2017/01/logo.png" alt="" />
