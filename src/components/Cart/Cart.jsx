@@ -11,7 +11,7 @@ const Cart = ({ data }) => {
                     <Card className=' '>
                          <Card.Body>
                               <img className=' w-100 rounded imageStyle' src={picture} alt="" />
-                              <h2 className='mt-4'>Name: {name}</h2>
+                              <h3 className='mt-4'>Name: {name}</h3>
                               <h4>Numbers of recipes: {recipesNumber}</h4>
                               <Card.Title >Experience: {Experiences}</Card.Title>
                               <Card.Subtitle className=" text-muted mb-2">

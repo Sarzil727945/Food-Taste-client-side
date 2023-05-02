@@ -5,29 +5,32 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import ActiveLink from '../ActiveLink/ActiveLink';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { Button } from 'react-bootstrap';
 
 
 const Header = () => {
-     // const { user, logOut } = useContext(AuthContext)
+     const { user, logOut } = useContext(AuthContext)
 
-     // // logOut part start
-     // const handelLogOut = () => {
-     //      logOut()
-     //           .then(() => {
-     //                // Sign-out successful.
-     //           })
-     //           .catch((error) => {
-     //                // An error happened.
-     //           });
-     // }
-     // // logOut part end
+     console.log(user);
+     // logOut part start
+     const handelLogOut = () => {
+          logOut()
+               .then(() => {
+                    // Sign-out successful.
+               })
+               .catch((error) => {
+                    // An error happened.
+               });
+     }
+     // logOut part end
 
      return (
           <div className='fixed-top '>
                <Navbar bg="dark" expand="lg" className=' mb-2'>
                     <Container fluid className='container'>
                          <Navbar.Brand href="#" className='fs-4'>
-                              <h2 className=' text-light'>Food Recipe</h2>
+                              <img className='logoStyle me-5' src="https://recipepress.inspirythemes.com/fourth/wp-content/uploads/sites/5/2017/01/logo.png" alt="" />
                          </Navbar.Brand>
                          <Navbar.Toggle aria-controls="navbarScroll" />
                          <Navbar.Collapse id="navbarScroll">
@@ -40,14 +43,12 @@ const Header = () => {
                                    <ActiveLink to="/blog">Blog</ActiveLink>
                               </Nav>
                               <Form className="d-flex">
-                                   {/* {
+                                   {
                                         user ? <div>
-                                             <span className=' me-3'>{user.displayName}</span>
+                                             <img title={user.displayName} className='imgStyle me-3' src={user.photoURL} alt="" />
                                              <Button onClick={handelLogOut} variant="info" className='py-2'>Log Out</Button>
                                         </div> : <ActiveLink to="/login">Login</ActiveLink>
-                                   } */}
-                                   {/* <ActiveLink to="/register">Register</ActiveLink> */}
-                                   <ActiveLink to="/login">Login</ActiveLink>
+                                   }
                               </Form>
                          </Navbar.Collapse>
                     </Container>

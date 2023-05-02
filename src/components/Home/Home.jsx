@@ -13,7 +13,7 @@ const Home = () => {
      }, [])
 
      return (
-          <div className='mt-2 pt-5'>
+          <div className='mt-4 pt-5'>
 
                {/* section1  part starts  */}
                <section className="container-fluid section1 pt-5">
