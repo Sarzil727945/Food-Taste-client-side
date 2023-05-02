@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import './Register.css';
 import { Button, Form } from 'react-bootstrap';
 import { AiFillEyeInvisible } from 'react-icons/ai'
-import { ImGoogle2 } from 'react-icons/im'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
@@ -15,7 +14,7 @@ const Register = () => {
      const [email, setEmail] = useState("")
      const [emailError, setEmailError] = useState('')
 
-     const { createUser, googlCreateUser } = useContext(AuthContext)
+     const { createUser } = useContext(AuthContext)
 
      // passwordShown function start 
      const [conformPasswordShown, setConformPasswordShown] = useState(false);
@@ -91,17 +90,6 @@ const Register = () => {
                });
      }
 
-     // handelGoogleRegister part start
-     const handelGoogleRegister = () =>{
-          googlCreateUser()
-          .then((result) => {
-               const user = result.user;
-             }).catch((error) => {
-               const errorMessage = error.message;
-               setError(errorMessage)
-             });
-     }
-     // handelGoogleRegister part end
 
      return (
           <div className=' mt-5 pt-5'>
@@ -156,9 +144,6 @@ const Register = () => {
                                    <Button variant="info" type="submit">
                                         Register
                                    </Button>
-                         <div className="d-grid gap-2 my-3 col-9 mx-auto">
-                              <Button onClick={handelGoogleRegister}  className="btn btn-success" type="button"> <span className=' fs-5 text-light'><ImGoogle2 /></span> Sign in with Google</Button>
-                         </div>
                                    <div>
                                         <small className='me-2'>Already have Account?</small>
                                         <Link to='/login'>Login</Link>

@@ -46,7 +46,8 @@ const Header = () => {
                                              <Button onClick={handelLogOut} variant="info" className='py-2'>Log Out</Button>
                                         </div> : <ActiveLink to="/login">Login</ActiveLink>
                                    } */}
-                                   <ActiveLink to="/register">Register</ActiveLink>
+                                   {/* <ActiveLink to="/register">Register</ActiveLink> */}
+                                   <ActiveLink to="/login">Login</ActiveLink>
                               </Form>
                          </Navbar.Collapse>
                     </Container>
