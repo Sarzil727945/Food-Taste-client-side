@@ -5,7 +5,7 @@ import './Cart.css'
 import { Link } from 'react-router-dom';
 
 const Cart = ({ data }) => {
-     const { picture, name, Experiences, likes, btn, recipesNumber } = data;
+     const { picture, name, Experiences, likes, btn1, recipesNumber } = data;
      return (
           <div className='col-lg-6 mb-3'>
                <div>
@@ -22,7 +22,7 @@ const Cart = ({ data }) => {
                               </Card.Subtitle>
                               <div className=' text-center'>
                                    <Button variant="info">
-                                        <Link className='text-decoration-none' to={`/viewRecipes/${recipesNumber}`}>View Recipes </Link>
+                                        <Link className='text-decoration-none' to={`/viewRecipes/${recipesNumber}`}>{btn1} </Link>
                                    </Button>
                               </div>
                          </Card.Body>

@@ -9,7 +9,7 @@ import {HiOutlineLocationMarker} from 'react-icons/hi';
 
 const Footer = () => {
      return (
-          <div>
+          <div className='mt-5'>
                <footer className="footer container-fluid sticky-lg-top">
                     <div className="container p-2">
                          <div className="row d-flex">
