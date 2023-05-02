@@ -53,17 +53,18 @@ const Footer = () => {
                                                   <ActiveLink to="/">Home</ActiveLink>
                                              </li>
                                              <li>
-                                                  <ActiveLink to="/statistics">Statistics</ActiveLink>
-                                             </li>
-                                             <li>
-                                                  <ActiveLink to="/applied">Applied Job</ActiveLink>
-                                             </li>
-                                             <li>
                                                   <ActiveLink to="/blog">Blog</ActiveLink>
                                              </li>
-                                             {/* <li>
-                                                  <ActiveLink to="/contact" >Contact</ActiveLink>
-                                             </li> */}
+                                             <li>
+                                                  <ActiveLink to="/viewRecipes/:id">View Recipes</ActiveLink>
+                                             </li>
+                                             <li>
+                                                  <ActiveLink to="/login">Login</ActiveLink>
+                                             </li>
+                                             <li>
+                                                  <ActiveLink to="/register">Register</ActiveLink>
+                                             </li>   
+                                             
                                         </ul>
                                    </div>
                               </div>
