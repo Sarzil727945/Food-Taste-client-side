@@ -2,13 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const ViewRecipes = () => {
-     
      const { id } = useParams();
-     console.log(id);
 
      const [jsonData, setJsonData] = useState([]);
 
-     // useEffect(()=>{
+     useEffect(()=>{
           const cartData = async () => {
                const chefData = await fetch('http://localhost:5000/chefData')
                const chef = await chefData.json()
@@ -19,10 +17,11 @@ const ViewRecipes = () => {
                }
      
           }
-     // }, [])
+          cartData()
+     }, [])
 
-     cartData()
-     console.log(jsonData);
+    console.log(jsonData);
+     
      
      return (
           <div className='mt-5 pt-5'>
