@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './Home.css'
 import Marquee from "react-fast-marquee";
 import Cart from '../Cart/Cart';
+import HomeSection3 from '../HomeSection3/HomeSection3';
+import HomeSection4 from '../HomeSection4/HomeSection4';
 
 const Home = () => {
      const [allData, setAllData] = useState([])
@@ -32,7 +34,7 @@ const Home = () => {
                     </div>
                </section>
                {/* section1  part ends */}
-               
+
 
                {/* section2  part starts */}
                <section className=' mt-lg-5 container'>
@@ -46,6 +48,22 @@ const Home = () => {
                     </div>
                </section>
                {/* section2  part ends */}
+
+                         <div className=' container'>
+                         <hr />
+                         </div>
+               {/* section3  part start */}
+               <section className=' container mt-5 pt-lg-3'>
+                    <h1 className=' text-center'>Food Display @ Prices</h1>
+                    <HomeSection3></HomeSection3>
+               </section>
+               {/* section3  part ends */}
+
+               {/* section4  part start */}
+               <section className=' mt-5 pt-lg-3'>
+                    <HomeSection4></HomeSection4>
+               </section>
+               {/* section4  part ends */}
           </div>
      );
 };

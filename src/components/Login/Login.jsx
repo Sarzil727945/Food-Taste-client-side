@@ -8,7 +8,7 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 const Login = () => {
      const [error, setError] = useState('')
      const [success, setSuccess] = useState('')
-     const [user , setUser] = useState('')
+     const [user, setUser] = useState('')
      const [passwordShown, setPasswordShown] = useState(false);
      const navigate = useNavigate()
 
@@ -53,31 +53,31 @@ const Login = () => {
      }
      // main form part end
 
-      // handelGoogleRegister part start
-      const handelGoogleRegister = () =>{
+     // handelGoogleRegister part start
+     const handelGoogleRegister = () => {
           googlSignIn()
-          .then((result) => {
-               const user = result.user;
-               setUser(user)
-               navigate('/')
-             }).catch((error) => {
-               const errorMessage = error.message;
-               setError(errorMessage)
-             });
+               .then((result) => {
+                    const user = result.user;
+                    setUser(user)
+                    navigate(from, { replace: true })
+               }).catch((error) => {
+                    const errorMessage = error.message;
+                    setError(errorMessage)
+               });
      }
      // handelGoogleRegister part end
 
      // handelGitHubRegister part start 
-     const handelGitHubRegister = () =>{
+     const handelGitHubRegister = () => {
           githubSingIn()
-          .then((result) => {
-               const user = result.user;
-               setUser(user)
-               navigate('/')
-             }).catch((error) => {
-               const errorMessage = error.message;
-               setError(errorMessage)
-             });
+               .then((result) => {
+                    const user = result.user;
+                    setUser(user)
+                    navigate(from, { replace: true })
+               }).catch((error) => {
+                    const errorMessage = error.message;
+                    setError(errorMessage)
+               });
      }
      // handelGitHubRegister part end
 
@@ -143,7 +143,7 @@ const Login = () => {
                                         <Button onClick={handelGoogleRegister} className="btn btn-success" type="button"> <span className=' fs-5 text-light'><ImGoogle2 /></span> Sign-in with Google</Button>
                                    </div>
                                    <div className="d-grid gap-2 mb-3 col-9 mx-auto">
-                                        <Button onClick={handelGitHubRegister}  className="btn btn-dark" type="button"> <span className=' fs-5 text-light'><AiOutlineGithub /></span> Sign-in with GitHub</Button>
+                                        <Button onClick={handelGitHubRegister} className="btn btn-dark" type="button"> <span className=' fs-5 text-light'><AiOutlineGithub /></span> Sign-in with GitHub</Button>
                                    </div>
                                    <div>
                                         <small className='me-2'>Please are you now?</small>

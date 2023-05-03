@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Cart = ({ data }) => {
      const { picture, name, Experiences, likes, btn1, recipesNumber } = data;
      return (
-          <div className='col-lg-6 mb-3'>
+          <div className='col-lg-4 mb-3'>
                <div>
                     <Card className=' '>
                          <Card.Body>
