@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import './SubViewRecipes.css'
 import { Button, Card } from 'react-bootstrap';
 import { AiFillLike } from 'react-icons/ai';
+import RecipeCart from '../RecipeCart/RecipeCart';
 
 
 const SubViewRecipes = ({ data }) => {
      const { picture, name, bio, Experiences, likes, recipesNumber, btn2 } = data;
-     const [isDisabled, setDisabled] = useState(false);
-     const handleSubmit = () => {
-          alert('Your button was clicked and is now disabled');
-          setDisabled(true);
-        }
+     const recipeData = data.recipes
+
+   
      return (
           <div>
                <section>
@@ -30,14 +29,20 @@ const SubViewRecipes = ({ data }) => {
                                    <p>
                                    <span> <span className=' fs-4'><AiFillLike/></span> Likes: {likes} </span>
                                    </p>
-                                   <div className=' text-center'>
-                                   <Button onClick={handleSubmit} disabled={isDisabled} className='text-decoration-none' variant="info">
-                                        {btn2}
-                                   </Button>
-                              </div>
+                                   
                               </div>
                          </div>
                     </div>
+               </section>
+               <section className='mt-5'>
+                   <div className='mx-lg-5 row'>
+                   {
+                       recipeData &&  recipeData.map(data => <RecipeCart
+                              key={data.rating}
+                              data={data}
+                         ></RecipeCart>)
+                    }
+                   </div>
                </section>
           </div>
      );
