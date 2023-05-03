@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RecipeCart = ({ data }) => {
      const { name, rating, method, btn } = data
@@ -8,7 +10,8 @@ const RecipeCart = ({ data }) => {
 
      const [isDisabled, setDisabled] = useState(false);
      const handleSubmit = () => {
-          alert('Your button was clicked and is now disabled');
+          toast("Added to favorite !!");
+
           setDisabled(true);
      }
      return (
@@ -39,6 +42,7 @@ const RecipeCart = ({ data }) => {
                               <Button onClick={handleSubmit} disabled={isDisabled} className='text-decoration-none' variant="info">
                                    {btn}
                               </Button>
+                              <ToastContainer />
                          </div>
                     </div>
                </div>

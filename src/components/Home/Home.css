@@ -1,7 +1,7 @@
 /* section1 css part start */
 
 .section1{
-     background: url(../../../public/images/background.jpg) no-repeat top center;
+     background: url(https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/8ab91149eb155af29f11496c/d0f3edac-474b-42be-b569-946cd98464a7.jpg) no-repeat top center;
      background-size: cover;
      height: 100vh;
      width: 100%;
@@ -15,7 +15,7 @@
  
  @media (max-width: 720px){
      .section1{
-         background: url(../../../public/images/background.jpg) no-repeat top center;
+         background: url(https://images01.nicepagecdn.com/c461c07a441a5d220e8feb1a/8ab91149eb155af29f11496c/d0f3edac-474b-42be-b569-946cd98464a7.jpg) no-repeat top center;
          background-size: cover;
          height: 80vh;
          width: 100%;
@@ -24,6 +24,6 @@
  }
 
 .text-color{
-    color: palevioletred;
+    color: #491dc1;
 }
 /* section1 css part ends */

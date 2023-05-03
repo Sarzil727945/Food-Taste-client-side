@@ -23,8 +23,8 @@ const Home = () => {
                          <h1 className=' text-color'>Welcome to this Website Home Page</h1>
                     </Marquee>
                     <div className='mt-lg-5 pt-lg-5'>
-                         <p className=' fs-1 text-muted text-center mt-lg-5'>Lemon & Limes - Personal Food Blog WordPress Theme</p>
-                         <h1 className='text-center display-3 '>
+                         <p className=' fs-1 text-center mt-lg-5 text-muted'>Lemon & Limes - Personal Food Blog WordPress Theme</p>
+                         <h1 className='text-center display-3 fw-semibold'>
                               Specially designed for food bloggers, cooking enthusiasts and small food businesses.
                          </h1>
                          <div className=' text-center mt-5'>
@@ -53,9 +53,10 @@ const Home = () => {
                          <hr />
                          </div>
                {/* section3  part start */}
-               <section className=' container mt-5 pt-lg-3'>
-                    <h1 className=' text-center'>Food Display @ Prices</h1>
+               <section className=' container mt-5 pt-lg-4'>
+                    <h2 className=' text-center fw-semibold display-4'>Food Display @ Prices</h2>
                     <HomeSection3></HomeSection3>
+                    <hr />
                </section>
                {/* section3  part ends */}
 
