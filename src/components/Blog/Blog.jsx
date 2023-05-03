@@ -1,11 +1,18 @@
 import React from 'react';
+// import { useReactToPrint } from 'react-to-pdf';
 
 const Blog = () => {
+
+     // const componentRef = useRef();
+     // const handlePrint = useReactToPrint({
+     //   content: () => componentRef.current,
+     // });
+
      return (
           <div className='mt-5 pt-5 container'>
                <h1 className='py-lg-5 text-center'>Question Answer</h1>
 
-               <div>
+               <div >
                     <div className='row'>
                          <div className='col-lg-6'>
                               <div className="card">
@@ -77,9 +84,10 @@ const Blog = () => {
                     </div>
                </div>
 
-               <div className=' text-center mt-5 pt-3'>
-               <button  type="button" className="btn btn-success">Success</button>
-               </div>
+               {/* ref={componentRef} */}
+                     {/* <button onClick={handlePrint}> Download PDF</button> */}
+                     {/* <i className="fas fa-file-pdf"></i> */}
+
           </div>
      );
 };

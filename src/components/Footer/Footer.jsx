@@ -55,9 +55,9 @@ const Footer = () => {
                                              <li>
                                                   <ActiveLink to="/blog">Blog</ActiveLink>
                                              </li>
-                                             <li>
+                                             {/* <li>
                                                   <ActiveLink to="/viewRecipes/:id">View Recipes</ActiveLink>
-                                             </li>
+                                             </li> */}
                                              <li>
                                                   <ActiveLink to="/login">Login</ActiveLink>
                                              </li>

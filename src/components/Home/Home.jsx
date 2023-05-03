@@ -7,11 +7,15 @@ import HomeSection4 from '../HomeSection4/HomeSection4';
 
 const Home = () => {
      const [allData, setAllData] = useState([])
+     const [isLoading, setIsLoading] = useState(true);
 
      useEffect(() => {
           fetch('http://localhost:5000/chefData')
                .then(res => res.json())
-               .then(data => setAllData(data))
+               .then(data => {
+                    setAllData(data);
+                    setIsLoading(false);
+                  })
      }, [])
 
      return (
@@ -37,7 +41,16 @@ const Home = () => {
 
 
                {/* section2  part starts */}
-               <section className=' mt-lg-5 container'>
+
+               {
+                    isLoading && <div className="text-center my-5">
+                    <div className="spinner-border" role="status">
+                      <span className="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+               }
+
+               <section className=' pt-lg-5 mt-lg-5 container'>
                     <div className='row mt-3'>
                          {
                               allData.map(data => <Cart
