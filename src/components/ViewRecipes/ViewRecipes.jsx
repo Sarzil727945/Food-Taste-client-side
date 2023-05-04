@@ -9,7 +9,7 @@ const ViewRecipes = () => {
 
      useEffect(()=>{
           const cartData = async () => {
-               const chefData = await fetch('http://localhost:5000/chefData')
+               const chefData = await fetch('https://assignment10-food-recipe-server-site-sarzil727945.vercel.app/')
                const chef = await chefData.json()
      
                if (id) {

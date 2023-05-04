@@ -10,7 +10,7 @@ const Home = () => {
      const [isLoading, setIsLoading] = useState(true);
 
      useEffect(() => {
-          fetch('http://localhost:5000/chefData')
+          fetch('https://assignment10-food-recipe-server-site-sarzil727945.vercel.app/')
                .then(res => res.json())
                .then(data => {
                     setAllData(data);
