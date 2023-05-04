@@ -1,18 +1,31 @@
-import React from 'react';
-// import { useReactToPrint } from 'react-to-pdf';
+import React, { useRef } from 'react';
+import './Blog.css'
+import { BsFillArrowDownCircleFill } from 'react-icons/bs'
+
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
+const options = {
+     orientation: 'portrait',
+     unit: 'in',
+     format: [9, 16]
+};
 
 const Blog = () => {
 
-     // const componentRef = useRef();
-     // const handlePrint = useReactToPrint({
-     //   content: () => componentRef.current,
-     // });
-
      return (
           <div className='mt-5 pt-5 container'>
-               <h1 className='py-lg-5 text-center'>Question Answer</h1>
 
-               <div >
+               <Pdf targetRef={ref} options={options} x={0.5} y={0.8} scale={0.6}
+                    filename="code-example.pdf">
+                    {({ toPdf }) => <div className=' position-relative'>
+                         <div className=' position-absolute pdfBtn mb-5'>
+                              <button onClick={toPdf} className='btn btn-success'> GENERATE PDF <span className=' fs-5'><BsFillArrowDownCircleFill /></span></button>
+                         </div>
+                    </div>}
+               </Pdf>
+
+               <h1 className='py-5 text-center'>Question Answer</h1>
+               <div ref={ref}>
                     <div className='row'>
                          <div className='col-lg-6'>
                               <div className="card">
@@ -59,7 +72,7 @@ const Blog = () => {
 
                                              Node.js allows developers to write server-side JavaScript code using the same language they use for client-side programming, enabling full-stack JavaScript development.
 
-                                             Express.js, on the other hand, is a lightweight and flexible web application framework that sits on top of Node.js. It simplifies the process of building web applications by providing a range of features and tools, including routing, middleware, and template engines. 
+                                             Express.js, on the other hand, is a lightweight and flexible web application framework that sits on top of Node.js. It simplifies the process of building web applications by providing a range of features and tools, including routing, middleware, and template engines.
 
                                              In summary, Node.js is a JavaScript runtime environment that allows developers to write server-side code in JavaScript, while Express.js is a web application framework that provides a range of tools and abstractions for building web applications on top of Node.js.</p>
                                    </div>
@@ -83,10 +96,6 @@ const Blog = () => {
                          </div>
                     </div>
                </div>
-
-               {/* ref={componentRef} */}
-                     {/* <button onClick={handlePrint}> Download PDF</button> */}
-                     {/* <i className="fas fa-file-pdf"></i> */}
 
           </div>
      );
