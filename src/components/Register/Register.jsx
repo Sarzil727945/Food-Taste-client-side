@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import './Register.css';
 import { Button, Form } from 'react-bootstrap';
-import { AiFillEyeInvisible } from 'react-icons/ai'
+import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai'
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
@@ -18,12 +18,18 @@ const Register = () => {
      const navigation = useNavigate();
 
      // passwordShown function start 
+     const [passwordIcon, setPasswordIcon] = useState(false)
+     const [conformPasswordIcon, setConformPasswordIcon] = useState(false)
+
      const [conformPasswordShown, setConformPasswordShown] = useState(false);
+
      const togglePassword = () => {
           setPasswordShown(!passwordShown);
+          setPasswordIcon(!passwordIcon)
      };
      const toggleConformPassword = () => {
           setConformPasswordShown(!conformPasswordShown);
+          setConformPasswordIcon(!conformPasswordIcon)
      }
      // passwordShown function end
 
@@ -52,6 +58,7 @@ const Register = () => {
                .then((userCredential) => {
                     const currentUser = userCredential.user;
                     setSuccess('Create user account successFull')
+                    alert('Welcome Your account successFull')
                     form.reset()
                     navigation('/')
                     setEmail('')
@@ -130,7 +137,9 @@ const Register = () => {
                                                   required />
                                         </div>
                                         <div className='passwordShow position-absolute'>
-                                             <p className=' fs-5' onClick={togglePassword} ><AiFillEyeInvisible /></p>
+                                             <p className=' fs-5' onClick={togglePassword} >{
+                                                  passwordIcon ? <AiFillEye/> : <AiFillEyeInvisible />
+                                             }</p>
                                         </div>
                                    </div>
                               </Form.Group>
@@ -142,7 +151,9 @@ const Register = () => {
                                              <Form.Control type={conformPasswordShown ? "text" : "password"} name='conformPassword' placeholder="Conform Password" required />
                                         </div>
                                         <div className='passwordShow position-absolute'>
-                                             <p className=' fs-5' onClick={toggleConformPassword}><AiFillEyeInvisible /></p>
+                                             <p className=' fs-5' onClick={toggleConformPassword}>{
+                                                  conformPasswordIcon ? <AiFillEye/> : <AiFillEyeInvisible />
+                                             }</p>
                                         </div>
                                    </div>
                               </Form.Group>
