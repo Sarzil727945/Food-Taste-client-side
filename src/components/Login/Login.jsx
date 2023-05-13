@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { AiFillEyeInvisible, AiOutlineGithub } from 'react-icons/ai'
+import { AiFillEyeInvisible, AiOutlineGithub, AiFillEye } from 'react-icons/ai'
 import { ImGoogle2 } from 'react-icons/im'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
@@ -21,8 +21,11 @@ const Login = () => {
      const emailRef = useRef()
 
      // passwordShown function start 
+     const [passwordIcon, setPasswordIcon] = useState(false)
+
      const togglePassword = () => {
           setPasswordShown(!passwordShown);
+          setPasswordIcon(!passwordIcon)
      };
      // passwordShown function end
 
@@ -122,7 +125,9 @@ const Login = () => {
                                                   required />
                                         </div>
                                         <div className='passwordShow position-absolute'>
-                                             <p className=' fs-5' onClick={togglePassword} ><AiFillEyeInvisible /></p>
+                                             <p className=' fs-5' onClick={togglePassword} >{
+                                                  passwordIcon ? <AiFillEye /> : <AiFillEyeInvisible />
+                                             }</p>
                                         </div>
                                    </div>
                               </Form.Group>
