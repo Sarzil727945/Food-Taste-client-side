@@ -42,6 +42,14 @@ const Login = () => {
           signIn(email, password)
                .then((userCredential) => {
                     const currentUser = userCredential.user;
+                    if (currentUser) {
+                         Swal.fire({
+                              title: 'Success!',
+                              text: 'Login Success !!',
+                              icon: 'success',
+                              confirmButtonText: 'Ok'
+                         })
+                    }
                     form.reset()
                     navigate(from, { replace: true })
                     setSuccess('Sign in successFull')

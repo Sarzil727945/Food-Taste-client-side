@@ -58,7 +58,14 @@ const Register = () => {
                .then((userCredential) => {
                     const currentUser = userCredential.user;
                     setSuccess('Create user account successFull')
-                    alert('Welcome Your account successFull')
+                    if (currentUser) {
+                         Swal.fire({
+                              title: 'Success!',
+                              text: 'Register Success !!',
+                              icon: 'success',
+                              confirmButtonText: 'Ok'
+                         })
+                    }
                     form.reset()
                     navigation('/')
                     setEmail('')
@@ -138,7 +145,7 @@ const Register = () => {
                                         </div>
                                         <div className='passwordShow position-absolute'>
                                              <p className=' fs-5' onClick={togglePassword} >{
-                                                  passwordIcon ? <AiFillEye/> : <AiFillEyeInvisible />
+                                                  passwordIcon ? <AiFillEye /> : <AiFillEyeInvisible />
                                              }</p>
                                         </div>
                                    </div>
@@ -152,7 +159,7 @@ const Register = () => {
                                         </div>
                                         <div className='passwordShow position-absolute'>
                                              <p className=' fs-5' onClick={toggleConformPassword}>{
-                                                  conformPasswordIcon ? <AiFillEye/> : <AiFillEyeInvisible />
+                                                  conformPasswordIcon ? <AiFillEye /> : <AiFillEyeInvisible />
                                              }</p>
                                         </div>
                                    </div>
