@@ -4,6 +4,7 @@ import { AiFillEyeInvisible, AiOutlineGithub, AiFillEye } from 'react-icons/ai'
 import { ImGoogle2 } from 'react-icons/im'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
      const [error, setError] = useState('')
@@ -68,6 +69,12 @@ const Login = () => {
                .then((result) => {
                     const user = result.user;
                     setUser(user)
+                    Swal.fire({
+                         title: 'Success!',
+                         text: 'Login Success !!',
+                         icon: 'success',
+                         confirmButtonText: 'Ok'
+                    })
                     navigate(from, { replace: true })
                }).catch((error) => {
                     const errorMessage = error.message;
@@ -82,6 +89,12 @@ const Login = () => {
                .then((result) => {
                     const user = result.user;
                     setUser(user)
+                    Swal.fire({
+                         title: 'Success!',
+                         text: 'Login Success !!',
+                         icon: 'success',
+                         confirmButtonText: 'Ok'
+                    })
                     navigate(from, { replace: true })
                }).catch((error) => {
                     const errorMessage = error.message;
