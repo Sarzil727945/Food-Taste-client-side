@@ -4,8 +4,10 @@ import Marquee from "react-fast-marquee";
 import Cart from '../Cart/Cart';
 import HomeSection3 from '../HomeSection3/HomeSection3';
 import HomeSection4 from '../HomeSection4/HomeSection4';
+import useTitle from '../../hooks/useTitle';
 
 const Home = () => {
+     useTitle('Home');
      const [allData, setAllData] = useState([])
      const [isLoading, setIsLoading] = useState(true);
 

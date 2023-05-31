@@ -3,6 +3,7 @@ import './Blog.css'
 import { BsFillArrowDownCircleFill } from 'react-icons/bs'
 
 import Pdf from "react-to-pdf";
+import useTitle from '../../hooks/useTitle';
 const ref = React.createRef();
 const options = {
      orientation: 'portrait',
@@ -11,6 +12,7 @@ const options = {
 };
 
 const Blog = () => {
+     useTitle('Blog');
 
      return (
           <div className='mt-5 pt-5 container'>

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import SubViewRecipes from '../SubViewRecipes/SubViewRecipes';
+import useTitle from '../../hooks/useTitle';
 
 const ViewRecipes = () => {
+     useTitle('ViewRecipes')
      const { id } = useParams();
 
      const [jsonData, setJsonData] = useState([]);

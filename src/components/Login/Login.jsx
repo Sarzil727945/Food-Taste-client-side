@@ -5,8 +5,10 @@ import { ImGoogle2 } from 'react-icons/im'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
+     useTitle('Login')
      const [error, setError] = useState('')
      const [success, setSuccess] = useState('')
      const [user, setUser] = useState('')
@@ -125,7 +127,7 @@ const Login = () => {
 
      // console.log(user);
      return (
-          <div className='mt-5 py-5'>
+          <div className='mt-5'>
                <h1 className='my-5 text-center'>This is Login Page</h1>
                <div className=' col-lg-4  mx-auto'>
                     <Form onSubmit={handelLogin}>

@@ -6,9 +6,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 
 const Register = () => {
+     useTitle('Register')
      const [passwordShown, setPasswordShown] = useState(false);
      const [error, setError] = useState('');
      const [success, setSuccess] = useState('');
@@ -110,7 +112,7 @@ const Register = () => {
 
 
      return (
-          <div className=' mt-5 pt-5'>
+          <div className=' mt-5'>
                <h1 className=' my-5 text-center'>This is Resister Page</h1>
                <div className=' col-lg-4 mx-auto '>
                     <Form onSubmit={handelRegister}>
